@@ -25,7 +25,7 @@ public class ConfigurationManager {
 
   /*
    * Used to load a configuration file by the path provided
-   * */
+   */
   public void loadConfigurationFile(String filePath) {
     FileReader fileReader = null;
     try {
@@ -38,7 +38,8 @@ public class ConfigurationManager {
     int i;
     while (true) {
       try {
-        if (((i = fileReader.read()) == -1)) break;
+        if (((i = fileReader.read()) == -1))
+          break;
       } catch (IOException e) {
         throw new HttpConfigurationException(e);
       }
@@ -59,7 +60,7 @@ public class ConfigurationManager {
 
   /*
    * Return the Current loaded configuration
-   * */
+   */
   public Configuration getCurrentConfiguration() {
     if (myCurrentConfiguration == null) {
       throw new HttpConfigurationException("No Current Configuration Set.");
